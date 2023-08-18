@@ -9,7 +9,7 @@ const Dasboard = (props) => {
         return <div className="flex w-screen h-screen justify-center items-center bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-white">Somthing went wrong...</div>
     }
   return (
-    <div className="w-[1200px] flex flex-wrap justify-around gap-5 text-slate-800 dark:text-white mt-28">
+    <div className="sm:w-[1200px] sm:flex flex-wrap justify-around gap-5 text-slate-800 dark:text-white mt-28">
       {props.list.map((item) => (
         <div key={item.id} onClick={()=>router.push(`/moviedetails/${item.id}`)} className="flex text-center flex-col cursor-pointer gap-3 mb-14">
           <img className="rounded-md w-[230px] h-[350px]" src={imageUrl(item.poster_path)} alt={item.original_title} />

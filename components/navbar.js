@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { fetchData } from "./apis";
 import { useRouter } from "next/navigation";
 import { MaterialUISwitch } from "./utils";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -76,11 +75,12 @@ const Navbar = () => {
        {!menu?
         <form onSubmit={navigation} className="flex gap-2 mt-3">
           <input
-            className="dark:text-black dark:border-0 border-2 px-3 w-[180px] border-gray-800 text-black dark:bg-slate-200 rounded-full outline-none"
+            className="dark:text-black dark:border-0 border-2 px-3 w-full border-gray-800 text-black dark:bg-slate-200 rounded-full outline-none"
             type="search"
             onChange={(e) => setSearch(e.target.value)}
             required
             value={search}
+            onBlur={()=>setMenu(true)}
           />
           <button
             className="dark:bg-gray-500 dark:border-0 border-2 border-gray-800 py-1 px-3 rounded-full dark:text-white"
